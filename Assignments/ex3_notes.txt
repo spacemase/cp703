@@ -1,0 +1,70 @@
+ * Any field may have leading and/or trailing spaces. Any field may be
+ * quoted. For simplicity, don't worry about validating balanced quotes.
+ * A record is valid only if all fields are present and valid. Fields
+ * are separated by commas. The order the fields appear in is as follows:
+ *
+ * Alphanumeric fields
+ * May contain any character; leading and/or trailing spaces and quotes
+ * must be stripped.
+ *
+ * FIPS code
+ * Must be an integer value between 0 and 99.
+ *
+ * Zip code
+ * Must be an integer value between 1 and 99999.
+ *
+ * State
+ * Must be a two character alphanumeric value.
+ *
+ * Name
+ * Must be an alphanumeric value bewteen one and twenty characters
+ * in length.
+ *
+ * Longitude
+ * Must be a floating point value between -180 and 180. (Note:
+ * integers, e.g. 99, are valid floating point numbers.)
+ *
+ * Latitude
+ * Must be a floating point value between -180 and 180. (Note:
+ * integers, e.g. 99, are valid floating point numbers.)
+ *
+ * Population
+ * Must be an integer greater than or equal to 0.
+ *
+ * Allocation
+ * Must be a double greater than or equal to 0.
+ *
+ * Your test driver should exercise the limits of each parameter (including the
+ * fields of the structure) and should test for valid and invalid scenarios.
+
+Your definitions inconsistant are for allocation.  comment says it should be int greater than or equal to zero, while definition for ZIPS_allocation_t is double.   I am using assumption double is correct since the test string uses a floating point value for allocation.
+
+There were several things your parsing logic failed to consider including: extra fields in a record; and invalid characters in a numeric field.
+
+test empty string for each field
+
+"53,98101,WA,SEATTLE,122.35032,47.62180,516259,0.0"
+"\"44\",\"02804\",\"RI\",\"ASHAWAY\",71.783745,41.423054,2472,0.002463"
+" 31 , 68949 , NE , HOLDREGE , 99.37551 , 40.44058 , 5671 ,0.1 "
+"31,69341,NE,TERRYTOWN,\"103.66845\",\"41.85000\",\"656\",\"0.2\""
+"\" 31 \",\" 69341 \",\" NE \",\" GERING \",\" 103.662896 \",\" 41.821993 \",\" 11631 \",\" 0.3 \""
+" \"08\" , \"80521\" , \"CO\" , \"FORT COLLINS\" , \"105.06848\" , \"40.55555\" , \"87758\" , \"0.4\" "
+"08,80014,CO,AURORA,104.72977,39.71226,222103,0.5"
+"08,80010,CO,DENVER,104.87265,39.76803,467610,0.6"
+"-1,00001,XY,SHANGRI-LA,-180,-180,0,0"
+"100,11111,XY,SHANGRI-LA,180,180,144000,1.1"
+"0,0,XY,SHANGRI-LA,-180,-180,0,0"
+"99,100000,XY,SHANGRI-LA,180,180,144000,1.1"
+"0,00001,X,SHANGRI-LA,-180,-180,0,0"
+"99,99999,XYZ,SHANGRI-LA,180,180,144000,1.1"
+"0,00001,XY,,-180,-180,0,0"
+"99,11111,XY,SHANGRI-LA HYPERBORIA,180,180,144000,1.1"
+"0,00001,XY,SHANGRI-LA,-180.00001,-180,0,0"
+"99,11111,XY,SHANGRI-LA,180.00001,180,144000,1.1"
+"0,00001,XY,SHANGRI-LA,-180,-180.00001,0,0"
+"99,11111,XY,SHANGRI-LA,180,180.00001,144000,1.1"
+"0,00001,XY,SHANGRI-LA,-180,-180,-1,0"
+"99,11111,XY,SHANGRI-LA,180,180,144000,-0.1"
+"0,00001,XY,SHANGRI-LA,-180,-180,0"
+"0,00001,XY,SHANGRI-LA,-180,-180,0,0"
+"99,11111,XY,SHANGRI-LA,180,180,144000,1.1"

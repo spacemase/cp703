@@ -1,0 +1,46 @@
+From: "Saved by Windows Internet Explorer 7"
+Subject: C Progamming: Advanced - Sorting and Searching Exercises
+Date: Tue, 12 Jun 2007 18:07:00 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/jstraub/advc/csamples/ssexercises.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.0.6000.16386
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>C Progamming: Advanced - Sorting and Searching =
+Exercises</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.6000.16448" name=3DGENERATOR></HEAD>
+<BODY>
+<H1>CLASS NO. CP703 A<BR>C Programming: Advanced </H1>
+<H2>Searching and Sorting Exercises </H2>
+<OL>
+  <LI>Create an array of ints. Sort the array.=20
+  <LI>Create an array of strings. Sort the array.=20
+  <LI>Create an array of pointers to ints. Sort the array.=20
+  <LI>Create an array of structs having an int member and a string =
+member. Sort=20
+  and search the array by the int member.=20
+  <LI>Create an array of structs having an int member and a string =
+member. Sort=20
+  and search the array by the string member.=20
+  <LI>Create an array of strings consisting of two tokens, for example: =
+{ "every=20
+  good", "boy does" }. Sort and search the array by the first token.=20
+  <LI>Create an array of strings consisting of two tokens. Sort and =
+search the=20
+  array by the second token.=20
+  <LI>Create an array of structs having an int member and a string =
+member.=20
+  Create an array of pointers to each element of the original array. =
+Sort and=20
+  search the pointer array by the int member.=20
+  <LI>Create an array of structs having an int member and a string =
+member.=20
+  Create an array of pointers to each element of the original array. =
+Sort and=20
+  search the pointer array by the string member. =
+</LI></OL></BODY></HTML>
